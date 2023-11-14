@@ -46,6 +46,7 @@ print_r($result);
 // Hiển thị thông tin của tất cả học sinh trong mảng.
 // Viết hàm để tìm học sinh có điểm cao nhất (grade).
 // Tạo mảng kết hợp chứa thông tin về học sinh
+// Tạo mảng kết hợp chứa thông tin về học sinh
 $students = [
     [
       "id" => 1,
@@ -55,15 +56,15 @@ $students = [
     ],
     [
       "id" => 2,
-      "name" => "Bùi Thị Hồng Hoa",
+      "name" => "Bùi Thị HỒng Hoa",
       "age" => 20,
-      "grade" => 10,
+      "grade" => 8,
     ],
     [
       "id" => 3,
       "name" => "Nguyễn Thị Mỹ Huyền",
       "age" => 20,
-      "grade" => 9,
+      "grade" => 10,
     ],
   ];
   
@@ -73,22 +74,23 @@ $students = [
   }
   
   // Viết hàm để tìm học sinh có điểm cao nhất
-  function HSdiem_max(array $students): array {
+  function tim_HS_max(array $students): array {
     $diem_max = 0;
-    $HSdiem_max = null;
+    $HS_max = null;
   
     foreach ($students as $student) {
-      if ($student["grade"] > $diem_max) {
+      if ($student["grade"] > $diem_max ) {
         $diem_max = $student["grade"];
-        $HSdiem_max = $student;
+        $HS_max = $student;
       }
     }
   
-    return  $HSdiem_max;
+    return $HS_max;
   }
   
   // Tìm học sinh có điểm cao nhất và hiển thị thông tin của học sinh đó
-  $HSdiem_max = HSdiem_max(array $students);
+  $HS_max = tim_HS_max($students);
   echo "Học sinh có điểm cao nhất là: <br>";
-  echo "ID: " .  $HSdiem_max["id"] . ", Tên: " .  $HSdiem_max["name"] . ", Tuổi: " .  $HSdiem_max["age"] . ", Điểm: " .  $HSdiem_max["grade"] . "<br>";
+  echo "ID: " . $HS_max ["id"] . ", Tên: " . $HS_max ["name"] . ", Tuổi: " . $HS_max ["age"] . ", Điểm: " . $HS_max ["grade"] . "<br>";
+  
 ?>
